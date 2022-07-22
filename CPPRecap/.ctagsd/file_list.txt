@@ -1,5 +1,15 @@
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\MoveSemantics\main.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\OOP\main.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\OOP\Player.hpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\OOP\Player.cpp
 C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\Pointers\main.cpp
 C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CStrings\main.cpp
 C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\Vectors\main.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\DefaultConstructorsInt\main.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\DefaultConstructorsInt\Player.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\DefaultConstructorsInt\Player.hpp
 C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\2DArray\main.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CopyConstructor\main.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CopyConstructor\Player.cpp
+C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CopyConstructor\Player.hpp
 C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\Arrays\main.cpp

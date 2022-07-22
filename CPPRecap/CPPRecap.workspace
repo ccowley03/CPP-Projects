@@ -4,7 +4,11 @@
   <Project Name="2DArray" Path="2DArray/2DArray.project" Active="No"/>
   <Project Name="Vectors" Path="Vectors/Vectors.project" Active="No"/>
   <Project Name="CStrings" Path="CStrings/CStrings.project" Active="No"/>
-  <Project Name="Pointers" Path="Pointers/Pointers.project" Active="Yes"/>
+  <Project Name="Pointers" Path="Pointers/Pointers.project" Active="No"/>
+  <Project Name="OOP" Path="OOP/OOP.project" Active="No"/>
+  <Project Name="DefaultConstructorsInt" Path="DefaultConstructorsInt/DefaultConstructorsInt.project" Active="No"/>
+  <Project Name="CopyConstructor" Path="CopyConstructor/CopyConstructor.project" Active="No"/>
+  <Project Name="MoveSemantics" Path="MoveSemantics/MoveSemantics.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -13,6 +17,10 @@
       <Project Name="Vectors" ConfigName="Debug"/>
       <Project Name="CStrings" ConfigName="Debug"/>
       <Project Name="Pointers" ConfigName="Debug"/>
+      <Project Name="OOP" ConfigName="Debug"/>
+      <Project Name="DefaultConstructorsInt" ConfigName="Debug"/>
+      <Project Name="CopyConstructor" ConfigName="Debug"/>
+      <Project Name="MoveSemantics" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -21,6 +29,10 @@
       <Project Name="Vectors" ConfigName="Release"/>
       <Project Name="CStrings" ConfigName="Release"/>
       <Project Name="Pointers" ConfigName="Release"/>
+      <Project Name="OOP" ConfigName="Release"/>
+      <Project Name="DefaultConstructorsInt" ConfigName="Release"/>
+      <Project Name="CopyConstructor" ConfigName="Release"/>
+      <Project Name="MoveSemantics" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
