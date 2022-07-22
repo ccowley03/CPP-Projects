@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Session Name="C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CPPRecap.workspace">
-  <int Value="8" Name="m_selectedTab"/>
+  <int Value="9" Name="m_selectedTab"/>
   <wxString Value="C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CPPRecap.workspace" Name="m_workspaceName"/>
   <TabInfoArray Name="TabInfoArray">
     <TabInfo>
@@ -55,14 +55,21 @@
     <TabInfo>
       <wxString Value="C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CopyConstructor\Player.hpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="16" Name="CurrentLine"/>
+      <int Value="0" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
     <TabInfo>
       <wxString Value="C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\CopyConstructor\Player.cpp" Name="FileName"/>
       <int Value="0" Name="FirstVisibleLine"/>
-      <int Value="13" Name="CurrentLine"/>
+      <int Value="15" Name="CurrentLine"/>
+      <wxArrayString Name="Bookmarks"/>
+      <IntVector Name="CollapsedFolds"/>
+    </TabInfo>
+    <TabInfo>
+      <wxString Value="C:\Users\cowle\OneDrive\Desktop\Portfolio Projects\CPP-Projects\CPPRecap\MoveSemantics\main.cpp" Name="FileName"/>
+      <int Value="51" Name="FirstVisibleLine"/>
+      <int Value="65" Name="CurrentLine"/>
       <wxArrayString Name="Bookmarks"/>
       <IntVector Name="CollapsedFolds"/>
     </TabInfo>
