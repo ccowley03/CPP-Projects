@@ -15,10 +15,12 @@ public:
 	void clean();
 	bool running();
 
+	static SDL_Renderer* renderer;
+
 private:
 	bool IsRunning;
 	SDL_Window* window;
-	SDL_Renderer* renderer;
+	
 	int count;
 
 

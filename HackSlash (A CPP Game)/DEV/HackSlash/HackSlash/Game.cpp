@@ -1,15 +1,23 @@
 #include "Game.h"
 #include <iostream>
 #include "TextureManager.h"
+#include <vector>
+#include "Map.h"
 #include "GameObj.h"
 SDL_Texture *playertexture;
 SDL_Rect srcRec, DestRec;
 
+SDL_Renderer* Game::renderer = nullptr;
 GameObj* player = nullptr;
+
+Map * map;
+
+
+std::vector<GameObj*>objects;
 
 Game::Game()
 {
-	init("HackSlash", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+	init("HackSlash", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 640, false);
 }
 
 Game::~Game()
@@ -34,7 +42,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		{
 			std::cout << "Window Works!" << std::endl;
 		}
-		renderer = SDL_CreateRenderer(window, -1, 0);
+		renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED && SDL_RENDERER_PRESENTVSYNC);
 		if (renderer)
 		{
 			SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -48,7 +56,13 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	}
 
-	player = new GameObj("assets/player.png", renderer,0,0);
+	
+
+	player = new GameObj("assets/player.png",Vector2f(0,0));
+	map = new Map();
+	objects.push_back(player);
+
+	
 
 }
 
@@ -71,15 +85,23 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	player->Update();
+	for (GameObj* obj:objects)
+	{
+		obj->Update();
 
+	}
+	
 }
 
 void Game::render()
 {
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, playertexture, NULL, &DestRec);
-	player->Render();
+	map->DrawMap();
+	for (GameObj *obj :objects)
+	{
+		obj->Render();
+	}
 	SDL_RenderPresent(renderer);
 
 }

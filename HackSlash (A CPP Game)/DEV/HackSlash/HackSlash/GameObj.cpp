@@ -1,30 +1,34 @@
 #include "GameObj.h"
 #include "TextureManager.h"
-GameObj::GameObj(const char* texture, SDL_Renderer* render,int x, int y)
+GameObj::GameObj(const char* texture, Vector2f p_pos)
+	:pos(p_pos)
 {
-	renderer = render;
-	objTexture = TextureManager::TextureLoad(texture, render);
-	xpos = x; ypos = y;
+	objTexture = TextureManager::TextureLoad(texture);
 }
 
 GameObj::~GameObj()
 {
 }
 
+Vector2f& GameObj::getpos()
+{
+	return pos;
+}
+
 void GameObj::Update()
 {
-	xpos++;
-	ypos++;
+	
 
 	srcRect.h= 32 ; srcRect.w = 32;
 	srcRect.x, srcRect.y = 0;
 	
-	destRect.x = xpos;destRect.y = ypos;
+	destRect.x = this->getpos().x; destRect.y = this->getpos().y;
 	
 	destRect.w = srcRect.w * 2; destRect.h = srcRect.h * 2;
 }
 
 void GameObj::Render()
 {
-	SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
+	SDL_RenderCopy(Game::renderer, objTexture, &srcRect, &destRect);
 }
+
