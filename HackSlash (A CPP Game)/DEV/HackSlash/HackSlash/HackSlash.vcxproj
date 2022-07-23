@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ECS.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObj.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -142,6 +143,7 @@
     <ClCompile Include="Maths.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ECS.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObj.h" />
     <ClInclude Include="Map.h" />
