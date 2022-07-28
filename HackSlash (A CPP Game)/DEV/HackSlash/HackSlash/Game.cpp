@@ -2,18 +2,23 @@
 #include <iostream>
 #include "TextureManager.h"
 #include <vector>
+#include "Vector2D.h"
 #include "Map.h"
-#include "GameObj.h"
+#include "ECS/Components.h"
+#include "Collision.h"
 SDL_Texture *playertexture;
 SDL_Rect srcRec, DestRec;
 
 SDL_Renderer* Game::renderer = nullptr;
-GameObj* player = nullptr;
+
+SDL_Event Game::event;
 
 Map * map;
 
+Management manager;
+auto& player(manager.addEntity());
 
-std::vector<GameObj*>objects;
+auto& wall(manager.addEntity());
 
 Game::Game()
 {
@@ -57,11 +62,19 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	}
 
 	
-
-	player = new GameObj("assets/player.png",Vector2f(0,0));
 	map = new Map();
-	objects.push_back(player);
+	
+	player.addComponent<TransformComponent>(2);
+	player.addComponent<SpriteComponent>("assets/player.png");
+	player.addComponent<KeyController>();
 
+	player.addComponent<CollisionComponent>("player");
+	wall.addComponent<TransformComponent>(300.0f, 300.0f, 300, 20, 1);
+
+	wall.addComponent<SpriteComponent>("assets/dirt.png");
+
+	wall.addComponent<CollisionComponent>("wall");
+	
 	
 
 }
@@ -69,7 +82,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 void Game::handleEvents()
 {
 
-	SDL_Event event;
+	
 	SDL_PollEvent(&event);
 	switch (event.type)
 	{
@@ -85,12 +98,17 @@ void Game::handleEvents()
 
 void Game::update()
 {
-	for (GameObj* obj:objects)
-	{
-		obj->Update();
 
+	manager.refresh();
+	manager.update();
+	if (Collision::AABB(player.getComponent<CollisionComponent>().collider,
+		wall.getComponent<CollisionComponent>().collider))
+	{
+		player.getComponent<TransformComponent>().scale = 1;
+		
+		player.getComponent<TransformComponent>().velocity * -1;
+		std::cout << "Wall Hit" << std::endl;
 	}
-	
 }
 
 void Game::render()
@@ -98,10 +116,7 @@ void Game::render()
 	SDL_RenderClear(renderer);
 	SDL_RenderCopy(renderer, playertexture, NULL, &DestRec);
 	map->DrawMap();
-	for (GameObj *obj :objects)
-	{
-		obj->Render();
-	}
+	manager.draw();
 	SDL_RenderPresent(renderer);
 
 }
