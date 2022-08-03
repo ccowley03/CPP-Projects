@@ -6,13 +6,13 @@
 class AIComponent : public Component
 {
 public:
-	TransformComponent* transform;
-	SpriteComponent* sprite;
+	Transformer* transform;
+	Sprite* sprite;
 
 	void init() override
 	{
-		transform = &entity->getComponent<TransformComponent>();
-		sprite = &entity->getComponent<SpriteComponent>();
+		transform = &entity->getComponent<Transformer>();
+		sprite = &entity->getComponent<Sprite>();
 
 	}
 };

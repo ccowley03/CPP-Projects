@@ -16,7 +16,9 @@ SDL_Event Game::event;
 Map * map;
 
 Management manager;
+
 auto& player(manager.addEntity());
+
 
 auto& wall(manager.addEntity());
 
@@ -64,16 +66,15 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	
 	map = new Map();
 	
-	player.addComponent<TransformComponent>(2);
-	player.addComponent<SpriteComponent>("assets/player2.png",true);
-	player.addComponent<KeyController>();
 
-	player.addComponent<CollisionComponent>("player");
-	wall.addComponent<TransformComponent>(300.0f, 300.0f, 300, 20, 1);
+	
+	AddPlayer(2, "assets/player2.png", true);
+		
+	wall.addComponent<Transformer>(300.0f, 300.0f, 300, 20, 1);
 
-	wall.addComponent<SpriteComponent>("assets/dirt.png");
+	wall.addComponent<Sprite>("assets/dirt.png");
 
-	wall.addComponent<CollisionComponent>("wall");
+	wall.addComponent<Collider>("wall");
 	
 	
 
@@ -101,12 +102,12 @@ void Game::update()
 
 	manager.refresh();
 	manager.update();
-	if (Collision::AABB(player.getComponent<CollisionComponent>().collider,
-		wall.getComponent<CollisionComponent>().collider))
+	if (Collision::AABB(player.getComponent<Collider>().collider,
+		wall.getComponent<Collider>().collider))
 	{
-		player.getComponent<TransformComponent>().scale = 1;
+		player.getComponent<Transformer>().scale = 1;
 		
-		player.getComponent<TransformComponent>().velocity * -1;
+		player.getComponent<Transformer>().velocity * -1;
 		std::cout << "Wall Hit" << std::endl;
 	}
 }
@@ -130,7 +131,22 @@ void Game::clean()
 
 }
 
+
+
 bool Game::running()
 {
 	return IsRunning;
+}
+
+
+
+
+void Game::AddPlayer(int numargs, const char* path, bool isanim)
+{
+	player.addComponent<Transformer>(numargs);
+	player.addComponent<Sprite>(path, isanim);
+	player.addComponent<KeyInput>();
+
+	player.addComponent<Collider>("player");
+
 }

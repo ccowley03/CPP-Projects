@@ -10,6 +10,7 @@ public:
 	~Game();
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	void handleEvents();
+	void AddPlayer(int numargs, const char* path, bool isanim);
 	void update();
 	void render();
 	void clean();
