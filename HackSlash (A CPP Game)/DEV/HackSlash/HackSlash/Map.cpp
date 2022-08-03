@@ -76,14 +76,14 @@ void Map::DrawMap()
 			switch (type)
 			{
 			case 0:
-				TextureManager::Draw(water, src, dest);
+				TextureManager::Draw(water, src, dest,SDL_FLIP_NONE);
 				break;
 			case 1:
-				TextureManager::Draw(grass, src, dest);
+				TextureManager::Draw(grass, src, dest,SDL_FLIP_NONE);
 				break;
 
 			case 2:
-				TextureManager::Draw(dirt, src, dest);
+				TextureManager::Draw(dirt, src, dest,SDL_FLIP_NONE);
 				break;
 
 			default:

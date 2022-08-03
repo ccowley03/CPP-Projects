@@ -65,7 +65,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	map = new Map();
 	
 	player.addComponent<TransformComponent>(2);
-	player.addComponent<SpriteComponent>("assets/player.png");
+	player.addComponent<SpriteComponent>("assets/player2.png",true);
 	player.addComponent<KeyController>();
 
 	player.addComponent<CollisionComponent>("player");
